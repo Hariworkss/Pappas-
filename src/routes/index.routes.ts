@@ -9,6 +9,8 @@ Modified: 2023-10-28T10:38:18.028Z
 
 import { Router } from 'express';
 import { IndexController } from '../app/controllers/index.controller';
+import { getCategory } from '../app/controllers/sportsCategory.controller';
+import { upload } from '../core/config/multer.config';
 
 //import { IndexMiddleware } from '../app/middlewares/index.middleware';
 
@@ -19,6 +21,8 @@ const indexController = new IndexController();
 router.route('/').get(indexController.welcomeController.bind(indexController));
 
 
+// category routes
+router.get('/get-categories', getCategory)
 
 
 

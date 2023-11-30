@@ -7,7 +7,7 @@ export const AppDataSource = new DataSource({
     host: "localhost",
     username: "root",
     password: "",
-    database: "restaurant",
+    database: "pappas",
     synchronize: true,
     // entities:['../../app/models/*.ts'],
     entities: ['src/app/models/*.ts'],
