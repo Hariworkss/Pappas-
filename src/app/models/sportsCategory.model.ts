@@ -1,15 +1,18 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, ManyToMany, JoinTable, CreateDateColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { ProductCategory } from './productCategory.model';
 
 
 @Entity()
-export class sportsCategory {
+export class SportsCategory {
   @PrimaryGeneratedColumn()
   category_id: number;
 
   @Column()
-  categoryname: string;
+  category_image: string;
 
   @Column()
-  image: string;
+  category_name: string;
 
+  // @OneToMany(() => ProductCategory, (productCategory:any) => productCategory.sportsCategory)
+  // productCategories: ProductCategory[];
 }

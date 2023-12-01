@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { sportsCategory } from '../models/sportscategory.model';
 import { AppDataSource } from '../../core/config/database.config';
+import { SportsCategory } from '../models/sportscategory.model';
 
 
 export const getCategory = async (req: Request, res: Response) => {
@@ -8,10 +8,10 @@ export const getCategory = async (req: Request, res: Response) => {
         const entityManager = AppDataSource.createEntityManager();
 
         //  new rating entity
-        const newRating = new sportsCategory();
+        const newRating = new SportsCategory();
         
 
-        res.status(201).json(sportsCategory);
+        res.status(201).json(SportsCategory);
     } catch (error) {
         console.error('Error in getting category', error);
         res.status(500).json({ error });
